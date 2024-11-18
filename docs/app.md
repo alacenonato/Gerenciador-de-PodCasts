@@ -30,9 +30,7 @@ response:
 {
     podcastName: "flow",
     episode: "MILTON NEVES - Flow #412",
-    videoId:"NE5aUYsswVQ"
-    cover:"https://img.youtube.com/vi/NE5aUYsswVQ/maxresdefault.jpg",
-    link:"https://www.youtube.com/watch?v=NE5aUYsswVQ",
+    videoId:"NE5aUYsswVQ",
     categories: ["saúde", "bodybuilder"]
 },
 {
