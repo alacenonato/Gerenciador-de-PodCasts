@@ -1,14 +1,13 @@
 import { IncomingMessage, ServerResponse } from 'http';
 
+import {serviceListEpisodes} from '../services/list-episodes-service'
+
 export const getListEpisodes = async (resquest: IncomingMessage, response: ServerResponse) => {
+    
+    const content = await serviceListEpisodes();
+
     response.writeHead(200, { 'content-type': "application/json" });
-    response.end(JSON.stringify({
-        podcastName: "flow",
-        episode: "MILTON NEVES - Flow #412",
-        videoId:"NE5aUYsswVQ",
-        categories: ["saúde", "bodybuilder"],
-        
-    }));
+    response.end(JSON.stringify(content));
 
 };
 
