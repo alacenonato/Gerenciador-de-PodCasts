@@ -1,13 +1,9 @@
+import { repositoryPodcast } from "../repositories/podcasts-repository";
+
 
 
 export const serviceListEpisodes = async () => {
-    const data = [{
-        podcastName: "flow",
-        episode: "MILTON NEVES - Flow #412",
-        videoId:"NE5aUYsswVQ",
-        categories: ["saúde", "bodybuilder"],
-        
-    }];
+    const data = await repositoryPodcast();
 
     return data;
 
