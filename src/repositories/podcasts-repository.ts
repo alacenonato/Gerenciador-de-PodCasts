@@ -6,17 +6,19 @@ import { PodcastModel } from '../models/podcast-models';
 const pathData = path.join(__dirname, '../repositories/podcasts.json');
 
 export const repositoryPodcast = async (
-    
+
     podcastName?: string
 
-): Promise<PodcastModel[]> => { 
+): Promise<PodcastModel[]> => {
 
-    const rawData = fs.readFileSync(pathData, "utf-8");
-    let jsonFile = JSON.parse(rawData);
+    const language = "utf-8";
+
+    const rawData = fs.readFileSync(pathData, language);
+    let jsonFile = JSON.parse(rawData); 
 
 
 
-    if(podcastName){
+    if (podcastName) {
         jsonFile = jsonFile.filter((podcast: PodcastModel) => podcast.podcastName === podcastName);
     }
 
