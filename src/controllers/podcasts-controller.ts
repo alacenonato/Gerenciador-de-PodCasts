@@ -3,7 +3,7 @@ import { IncomingMessage, ServerResponse } from 'http';
 import {serviceListEpisodes} from '../services/list-episodes-service'
 import { serviceFilterEpisodes } from '../services/filter-episodes-service';
 
-export const getListEpisodes = async (resquest: IncomingMessage, response: ServerResponse) => {
+export const getListEpisodes = async (request: IncomingMessage, response: ServerResponse) => {
     
     const content = await serviceListEpisodes();
 
@@ -12,9 +12,13 @@ export const getListEpisodes = async (resquest: IncomingMessage, response: Serve
 
 };
 
-export const getFilterEpisodes = async (resquest: IncomingMessage, response: ServerResponse) => {
+export const getFilterEpisodes = async (request: IncomingMessage, response: ServerResponse) => {
 
-    const content = await serviceFilterEpisodes('flow');
+    // http://localhost:3636/api/episode?p=flow
+    const queryString = request.url?.split("?p=")[1] || "";
+
+    const content = await serviceFilterEpisodes(queryString);
+
     response.writeHead(200, {'content-type': "application/json"});
     response.end(JSON.stringify(content));
     
