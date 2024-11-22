@@ -1,6 +1,5 @@
-import { IncomingMessage } from "http";
 import { repositoryPodcast } from "../repositories/podcasts-repository";
-import { PodcastTransferModel } from "../models/filter-podcast-models";
+import { PodcastTransferModel } from "../models/podcast-tranfer-model";
 import { StatusCode } from "../utils/status.code";
 
 export const serviceFilterEpisodes = async (

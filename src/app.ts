@@ -9,7 +9,7 @@ export const app = async (request: http.IncomingMessage, response: http.ServerRe
     // query string
     // http://localhost:3636/api/episode?p=flow
 
-    const [baseUrl, queryString] = request.url?.split('?') ?? ["", ""];
+    const baseUrl = request.url?.split('?')[0];
     // console.log(baseUrl);
     // console.log(queryString);
 
